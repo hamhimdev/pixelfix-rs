@@ -3,7 +3,7 @@
 **pixelfix-rs** is a Rust implementation of [Corecii’s Transparent Pixel Fix (pixelfix)](https://github.com/Corecii/Transparent-Pixel-Fix).
 
 Here's some statistics compared to Corecii's project:
-* **100–120x or 95%+ faster** in my testing (below)
+* **100–120x or 95%+ faster** in my testing (shown below)
 * About **10x smaller** (due to being a compiled binary)
 * Works as a **drop-in replacement** for pixelfix
 

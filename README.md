@@ -1,3 +1,4 @@
+
 # pixelfix-rs
 
 **pixelfix-rs** is a Rust implementation of [Corecii’s Transparent Pixel Fix (pixelfix)](https://github.com/Corecii/Transparent-Pixel-Fix).
@@ -18,6 +19,9 @@ Here's some statistics compared to Corecii's project:
 * Fix one image, many images, or an entire folder (recursive)
 * Progress bar with ETA
 * FAST!!!
+
+## Installation
+I don't have prebuilt binaries for MacOS yet, but I do for Windows and Linux. If you know how to, you probably can build the program on MacOS yourself and it should work fine. Windows and Linux users can get it from the [Releases page.](https://codeberg.org/SystemSniper/Rooftop/releases)
 
 ## Usage
 

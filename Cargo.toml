@@ -1,0 +1,27 @@
+[package]
+name = "pixelfix"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "Fix transparent pixels in PNG images using Voronoi diagrams"
+license = "MIT"
+
+[[bin]]
+name = "pixelfix"
+path = "src/main.rs"
+
+[dependencies]
+image = "0.25"
+kiddo = "5.2"
+rayon = "1.11"
+indicatif = "0.18"
+num_cpus = "1.16"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["consoleapi", "processenv", "winbase", "winuser"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"

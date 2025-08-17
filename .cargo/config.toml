@@ -1,0 +1,8 @@
+[target.x86_64-pc-windows-gnu]
+linker = "x86_64-w64-mingw64-gcc"
+rustflags = ["-C", "target-feature=+crt-static"]
+
+# Aliases for common build commands
+[alias]
+build-win = "build --release --target x86_64-pc-windows-gnu"
+build-all = "build --release"

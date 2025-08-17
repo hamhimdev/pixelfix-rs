@@ -19,8 +19,17 @@ Here's some statistics compared to Corecii's project:
 * Progress bar with ETA
 * FAST!!!
 
-## Installation
+## Installing
 I don't have prebuilt binaries for MacOS yet, but I do for Windows and Linux. If you know how to, you probably can build the program on MacOS yourself and it should work fine. Windows and Linux users can get it from the [Releases page.](https://codeberg.org/hamhim/pixelfix-rs/releases)
+
+### Building
+Very simple to do, follow the instructions [on the Rust language website](https://www.rust-lang.org/learn/get-started) to install rust and you optionally need git, if you don't have git download a zip from Codeberg.  
+
+1. ```git clone https://codeberg.org/hamhim/pixelfix-rs```
+2. ```cd pixelfix-rs```
+3. ```cargo build # For native installation```
+4. Done! It'll be in /target/release/pixelfix.
+5. On linux you may need to make it executable, you can do this through your file manager or by running: `chmod +x ./target/release/pixelfix`
 
 ## Usage
 

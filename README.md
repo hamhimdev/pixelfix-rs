@@ -107,4 +107,4 @@ I would recommend reading the last section of [Corecii's repository](https://git
 
 The program is under the MIT License. [The repository has the clause attached here.](https://codeberg.org/hamhim/pixelfix-rs/src/branch/main/LICENSE)
 
-##### This repository is mirrored to [Clickette Git](https://git.clickette.org/hamhim/pixelfix-rs)
+##### This repository is mirrored to [Clickette Git](https://git.clickette.org/hamhim/pixelfix-rs), and worked on [Codeberg.](https://codeberg.org/hamhim/pixelfix-rs)

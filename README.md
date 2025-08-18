@@ -41,6 +41,16 @@ With the binaries, you can use it directly by defining it's path, or set it up t
 5. Move the `pixelfix.exe` binary to that directory
 6. Done! You can use pixelfix on folders and files by right clicking on them and hovering over the "Share To" option, then selecting `pixelfix.exe`. On Windows 11, you may have to click on "Show more options" to bring back the Windows 10 context menu.
 
+### Linux
+
+#### Using an installation script
+
+You can directly run the following command in your terminal to automatically install pixelfix and make it globally accessible.
+
+```sh
+curl -s https://cutely.strangled.net/pixelfix.sh | bash
+```
+
 ### Building
 
 Follow the instructions [on the Rust language website](https://www.rust-lang.org/tools/install) to install Rust. You will also need Git; if you don't have it, [get it here](https://git-scm.com/downloads). Alternatively, you can download [an archive from Codeberg](https://codeberg.org/hamhim/pixelfix-rs/archive/main.zip).

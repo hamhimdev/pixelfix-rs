@@ -43,7 +43,7 @@ With the binaries, you can use it directly by defining it's path, or set it up t
 
 ### Building
 
-Follow the instructions [on the Rust language website](https://www.rust-lang.org/learn/get-started) to install Rust. You will also need Git; if you don't have it, [get it here](https://git-scm.com/downloads). Alternatively, you can download [an archive from Codeberg](https://codeberg.org/hamhim/pixelfix-rs/archive/main.zip).
+Follow the instructions [on the Rust language website](hhttps://www.rust-lang.org/tools/install) to install Rust. You will also need Git; if you don't have it, [get it here](https://git-scm.com/downloads). Alternatively, you can download [an archive from Codeberg](https://codeberg.org/hamhim/pixelfix-rs/archive/main.zip).
 
 1. **Get the source code** using one of the following methods:
 

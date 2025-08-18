@@ -29,27 +29,59 @@ With the binaries, you can use it directly by defining it's path, or set it up t
 
 ### Windows
 
-#### Method 1 - Add pixelfix to the right click send to feature on explorer
+#### Method 1 - Add pixelfix to the right click context menu "send to" feature on explorer
 
-0. Have `pixelfix.exe` downloaded
-1. Open the Run dialogue with Windows Key + R
-2. Insert `shell:sendto` as shown below
+1. Have `pixelfix.exe` downloaded
+2. Open the Run dialogue with Windows Key + R
+3. Insert `shell:sendto` as shown below
 
-![Windows' Run dialogue, with shell:sendto inserted](https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/shellsendto.webp)
+    ![Windows' Run dialogue, with shell:sendto inserted](https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/shellsendto.webp)
 
-3. Press `OK` or the Enter key, it should open a File Explorer window
-4. Move the `pixelfix.exe` binary to that directory
-5. Done! You can use pixelfix on folders and files by right clicking on them and hovering over the "Share To" option, then selecting `pixelfix.exe`. On Windows 11, you may have to click on "Show more options" to bring back the Windows 10 context menu.
+4. Press `OK` or the Enter key, it should open a File Explorer window
+5. Move the `pixelfix.exe` binary to that directory
+6. Done! You can use pixelfix on folders and files by right clicking on them and hovering over the "Share To" option, then selecting `pixelfix.exe`. On Windows 11, you may have to click on "Show more options" to bring back the Windows 10 context menu.
 
 ### Building
 
-Follow the instructions [on the Rust language website](https://www.rust-lang.org/learn/get-started) to install Rust and you optionally need git, if you don't have git download a zip from Codeberg.  
+Follow the instructions [on the Rust language website](https://www.rust-lang.org/learn/get-started) to install Rust. You will also need Git; if you don't have it, [get it here](https://git-scm.com/downloads). Alternatively, you can download [an archive from Codeberg](https://codeberg.org/hamhim/pixelfix-rs/archive/main.zip).
 
-1. Download the repository using git: `git clone https://codeberg.org/hamhim/pixelfix-rs`
-2. Change the directory to be git: `cd pixelfix-rs`
-3. Build using cargo: `cargo build # For native installation`
-4. Done! It'll be in /target/release/pixelfix.
-5. On linux you _may_ need to make it executable, you can do this through your file manager or by running: `chmod +x thePathToThePixelfixBinary`
+1. **Get the source code** using one of the following methods:
+
+      * **a. Git (Recommended):** Clone the repository.
+
+        ```sh
+        git clone https://codeberg.org/hamhim/pixelfix-rs
+        ```
+
+      * **b. Direct Download:** Download and extract the `.zip` archive from Codeberg.
+
+2. **Navigate into the project directory:**
+
+    ```sh
+    cd pixelfix-rs
+    ```
+
+    *(Note: Codeberg should append the branch name of the repository if you download a zip or tarball archive, in this case you need to use `pixelfix-rs-main`)*.
+
+3. **Build the project** using Cargo:
+
+    ```sh
+    cargo build --release
+    ```
+
+4. **Done\!** The executable will be in the `target/release/` directory. For example: `target/release/pixelfix`.
+
+5. **(Linux (and maybe macOS?) Only)** You shouldn't have to, but you may need to make it executable using one of the following methods:
+
+      * **a. Using `chmod` in the terminal**
+
+        ```sh
+        chmod +x target/release/pixelfix
+        ```
+
+      * **b. Using your file manager**
+
+        Most Linux file managers can often make a file executable. To do this, right-click the file, go to its **Properties** or **Permissions**, and check the box to **Allow executing file as a program** or a similar option.
 
 ## Usage
 

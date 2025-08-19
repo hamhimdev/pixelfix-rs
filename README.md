@@ -39,7 +39,7 @@ With the binaries, you can use it directly by defining it's path, or set it up t
 
 4. Press `OK` or the Enter key, it should open a File Explorer window
 5. Move the `pixelfix.exe` binary to that directory
-6. Done! You can use pixelfix on folders and files by right clicking on them and hovering over the "Send To" option, then selecting `pixelfix.exe`. On Windows 11, you may have to click on "Show more options" to bring back the Windows 10 context menu.
+6. Done! You can use pixelfix on folders and files by right clicking on them and hovering over the "Send to" option, then selecting `pixelfix.exe`. On Windows 11, you may have to click on "Show more options" to bring back the Windows 10 context menu.
 
 ### Linux
 

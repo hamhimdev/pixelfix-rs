@@ -23,7 +23,7 @@ Here's some statistics compared to Corecii's project:
 
 ## Installing
 
-I don't have prebuilt binaries for macOS yet, but I do for Windows and Linux. If you are comfortable with manually building the program for use in macOS, or if you wish to build the program to use yourself, a quick guide is provided below. Windows and Linux users can get a binary built by me from the [Releases page.](https://codeberg.org/hamhim/pixelfix-rs/releases)
+I don't have prebuilt binaries for macOS yet, but I do for Windows and Linux. If you are comfortable with manually building the program for use in macOS, or if you wish to build the program to use yourself, a quick guide is provided below. Windows and Linux users can get a binary built by me from the [Releases page](https://codeberg.org/hamhim/pixelfix-rs/releases).
 
 With the binaries, you can use it directly by defining it's path, or set it up to be accessible globally.  
 
@@ -115,6 +115,6 @@ I would recommend reading the last section of [Corecii's repository](https://git
 
 ## Licensing
 
-The program is under the MIT License. [The repository has the clause attached here.](https://codeberg.org/hamhim/pixelfix-rs/src/branch/main/LICENSE)
+The program is under the MIT License. [The repository has the clause attached here](https://codeberg.org/hamhim/pixelfix-rs/src/branch/main/LICENSE).
 
-##### This repository is mirrored to [Clickette Git](https://git.clickette.org/hamhim/pixelfix-rs) and worked on [Codeberg.](https://codeberg.org/hamhim/pixelfix-rs)
+##### This repository is mirrored to [Clickette Git](https://git.clickette.org/hamhim/pixelfix-rs) and worked on [Codeberg](https://codeberg.org/hamhim/pixelfix-rs).

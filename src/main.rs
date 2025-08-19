@@ -1,13 +1,13 @@
 use std::env;
 use std::fs;
 use std::path::Path;
-use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Arc;
+use std::sync::atomic::{AtomicUsize, Ordering};
 
 use image::{Rgba, RgbaImage};
 use indicatif::{ProgressBar, ProgressStyle};
-use kiddo::float::kdtree::KdTree;
 use kiddo::SquaredEuclidean;
+use kiddo::float::kdtree::KdTree;
 use rayon::prelude::*;
 
 const NEIGHBOR_LOCATIONS: [(i32, i32); 8] = [
@@ -87,7 +87,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 .file_name()
                 .and_then(|name| name.to_str())
                 .unwrap_or(&file_path);
-            
+
             pb.set_message(filename.to_string());
             let result = process_image_optimized(&file_path, dbg_mode);
             pb.inc(1);

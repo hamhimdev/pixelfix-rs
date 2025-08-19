@@ -6,7 +6,7 @@ Here's some statistics compared to Corecii's project:
 
 * **100–120x or 95%+ faster** in my testing (shown below)
 * About **10x smaller** (due to being a compiled binary)
-* Works as a **drop-in replacement** for pixelfix
+* Works as a **drop-in replacement**
 
 <video src="https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/showcase.webm"
        width="600"

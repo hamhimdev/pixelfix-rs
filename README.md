@@ -96,12 +96,12 @@ For Nix users who prefer the flake approach:
 
 ```bash
 # Install permanently to user profile
-nix profile install git+https://codeberg.org/hamhim/pixelfix-rs
+nix profile install github:hamhimdev/pixelfix-rs/main
 
 # Use once without installing
-nix run git+https://codeberg.org/hamhim/pixelfix-rs -- image.png
+nix run github:hamhimdev/pixelfix-rs/main -- image.png
 
-# Replace with github:hamhimdev/pixelfix-rs/main if you prefer to use GitHub
+# Replace with git+https://codeberg.org/hamhim/pixelfix-rs if you prefer to use Codeberg, however if you don't have proper ipv6 you might have trouble using this.
 ```
 
 #### NixOS
@@ -114,9 +114,9 @@ A flake is provided that you can use to install the program on NixOS systems:
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    pixelfix.url = "git+https://codeberg.org/hamhim/pixelfix-rs";
-    # You can also use https://git.clickette.org/hamhim/pixelfix-rs, but Codeberg will be faster and more reliable.
-    # If you prefer, you can replace this with a GitHub mirror by using "github:hamhimdev/pixelfix-rs/main"
+    pixelfix.url = "github:hamhimdev/pixelfix-rs/main";
+    # You can also use https://git.clickette.org/hamhim/pixelfix-rs, but GitHub will be faster and more reliable.
+    # If you prefer, you can replace this with Codeberg by using "git+https://codeberg.org/hamhim/pixelfix-rs/main", however if you don't have proper ipv6 you might have trouble using this.
   };
 
   outputs = { self, nixpkgs, pixelfix }: {
@@ -158,6 +158,27 @@ And then add it to your packages:
     pixelfix.packages.${pkgs.system}.default
     # ...
   ];
+}
+```
+
+And to expose the pixelfix flake to your configuration.nix:
+
+`flake.nix`
+
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    pixelfix.url = "github:hamhimdev/pixelfix-rs/main";
+  };
+
+  outputs = { self, nixpkgs, pixelfix }: {
+    nixosConfigurations.yourhostname = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit pixelfix; }; # !!!
+      modules = [ ./configuration.nix ];
+    };
+  };
 }
 ```
 

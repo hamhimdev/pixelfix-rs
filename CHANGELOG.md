@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.3 (16 September 2025)
+
+Wrong hash in flake, oops. Also, turns out, if you don't have ipv6 (and this is from my little testing) you can't use codeberg as the flake source. I also didn't mention a pretty major step if you wanted to install pixelfix from configuration.nix. Second minor readme update!
+
 ## v0.1.2 (16 September 2025)
 
 Wrong cargo command in readme. I don't think you can edit publishes on crates.io.

@@ -38,7 +38,7 @@
           pname = "pixelfix";
           version = "0.1.0";
           src = ./.;
-          cargoHash = "sha256-Ay8bW9Yu6oy/1oeAgnEAbeEifIQ316bOhpehXyHJphY=";
+          cargoHash = "sha256-qpCnhCFYG2wnVScpsW2eFu29WW5Awxjv/Pm6swEKUYY=";
 
           inherit buildInputs nativeBuildInputs;
 
@@ -49,7 +49,7 @@
             description = "Fix transparent pixels in PNG images by filling them with the nearest non-transparent pixel's color";
             homepage = "https://codeberg.org/hamhim/pixelfix-rs";
             license = licenses.mit;
-            maintainers = [ ];
+            maintainers = [ "hamhimdev <hamhimdev@proton.me>"];
             mainProgram = "pixelfix";
             platforms = platforms.all;
           };

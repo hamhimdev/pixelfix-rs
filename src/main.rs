@@ -3,7 +3,7 @@ use std::env;
 use std::fs;
 use std::path::Path;
 use std::sync::Arc;
-use std::sync::atomic::{AtomicUsize, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 
 use image::{Rgba, RgbaImage};
 use indicatif::{ProgressBar, ProgressStyle};
@@ -69,6 +69,58 @@ impl ProcessingStats {
     }
 }
 
+pub struct LargeImagePolicy {
+    pub allow_large_images: AtomicBool,
+    pub user_has_decided: AtomicBool,
+}
+
+impl LargeImagePolicy {
+    pub fn new() -> Self {
+        Self {
+            allow_large_images: AtomicBool::new(false),
+            user_has_decided: AtomicBool::new(false),
+        }
+    }
+
+    pub fn should_process_large_image(
+        &self,
+        width: u32,
+        height: u32,
+        file_path: &str,
+    ) -> Result<bool, Box<dyn std::error::Error + Send + Sync>> {
+        if width <= 4096 && height <= 4096 {
+            return Ok(true);
+        }
+
+        if self.user_has_decided.load(Ordering::Relaxed) {
+            return Ok(self.allow_large_images.load(Ordering::Relaxed));
+        }
+
+        let megapixels = (width as f64 * height as f64) / 1_000_000.0;
+        println!();
+        println!(
+            "⚠️ Large image detected: {}x{} ({:.1} MP)",
+            width, height, megapixels
+        );
+        println!("File: {}", extract_filename(file_path));
+        println!("Processing large images will take significant time and system memory.");
+
+        let allow = get_user_confirmation("Continue processing large images?")?;
+
+        self.allow_large_images.store(allow, Ordering::Relaxed);
+        self.user_has_decided.store(true, Ordering::Relaxed);
+
+        if allow {
+            println!("Processing all images...");
+        } else {
+            println!("Good idea. Skipping all large images in processing.");
+        }
+        println!();
+
+        Ok(allow)
+    }
+}
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let start_time = std::time::Instant::now();
     let (file_paths, debug_mode) = parse_arguments()?;
@@ -82,8 +134,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let progress_bar = create_progress_bar(file_paths.len());
     let stats = Arc::new(ProcessingStats::new());
+    let large_image_policy = Arc::new(LargeImagePolicy::new());
 
-    process_files_parallel(&file_paths, debug_mode, &progress_bar, &stats);
+    process_files_parallel(
+        &file_paths,
+        debug_mode,
+        &progress_bar,
+        &stats,
+        &large_image_policy,
+    );
 
     progress_bar.finish_with_message("Complete!");
     stats.print_summary();
@@ -182,6 +241,7 @@ fn process_files_parallel(
     debug_mode: bool,
     progress_bar: &ProgressBar,
     stats: &Arc<ProcessingStats>,
+    large_image_policy: &Arc<LargeImagePolicy>,
 ) {
     let results: Vec<_> = file_paths
         .par_iter()
@@ -189,7 +249,7 @@ fn process_files_parallel(
             let filename = extract_filename(file_path);
             progress_bar.set_message(filename.to_string());
 
-            let result = process_single_image(file_path, debug_mode);
+            let result = process_single_image(file_path, debug_mode, large_image_policy);
             progress_bar.inc(1);
 
             (file_path.clone(), result)
@@ -222,8 +282,9 @@ fn extract_filename(file_path: &str) -> &str {
 fn process_single_image(
     file_path: &str,
     debug_mode: bool,
+    large_image_policy: &Arc<LargeImagePolicy>,
 ) -> Result<ProcessResult, Box<dyn std::error::Error + Send + Sync>> {
-    let mut image = load_and_validate_image(file_path)?;
+    let mut image = load_and_validate_image(file_path, large_image_policy)?;
 
     let border_pixels = find_border_pixels(&image)?;
     if border_pixels.is_empty() {
@@ -239,24 +300,13 @@ fn process_single_image(
 
 fn load_and_validate_image(
     file_path: &str,
+    large_image_policy: &Arc<LargeImagePolicy>,
 ) -> Result<RgbaImage, Box<dyn std::error::Error + Send + Sync>> {
     let image = image::open(file_path)?.into_rgba8();
     let (width, height) = image.dimensions();
 
-    if width > 4096 || height > 4096 {
-        let megapixels = (width as f64 * height as f64) / 1_000_000.0;
-        println!();
-        println!(
-            "⚠️ Large image detected: {}x{} ({:.1} MP)",
-            width, height, megapixels
-        );
-        println!("File: {}", extract_filename(file_path));
-        println!("Processing large images will take significant time and system memory.");
-
-        if !get_user_confirmation("Continue processing?")? {
-            return Err("Good idea.".into());
-        }
-        println!();
+    if !large_image_policy.should_process_large_image(width, height, file_path)? {
+        return Err("Skipped: Answered \"no\" to processing large images".into());
     }
 
     // why?

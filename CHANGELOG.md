@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.1.4 (17 September 2025)
+
+#### More freedom!
+
+For the large image warning, it will now remember your choice for the full batch of processing. Good luck to your CPU. I'm not responsible for any damage caused by pixelfix.
+
+![Pixelfix](https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/changelog/0.1.4/meow.webp)
+
+#### Realistically:
+
+Pixelfix should be able to handle ~4k images perfectly fine without killing your computer, it's the parallel processing that will since if you have multiple ~4k images... maybe ask your exporter of choice to not do this?
+
+#### By the way
+
+I forgot to make binary builds for 0.1.1/2 and 3, there will be ones for v0.1.4 now that I have realised. I was too busy with getting the Nix flake working.
+
 ## v0.1.3 (16 September 2025)
 
 Wrong hash in flake, oops. Also, turns out, if you don't have ipv6 (and this is from my little testing) you can't use codeberg as the flake source. I also didn't mention a pretty major step if you wanted to install pixelfix from configuration.nix. Second minor readme update!

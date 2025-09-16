@@ -30,7 +30,7 @@ https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/changelog/0.1
 
 #### Improved Readme
 
-I spent some time writing documentation for pixelfix, making everything clear and easy to read. I might have put a little bit too much time, but a cool thing came out of it! Pixelfix logo! It isn't anything sepcial but it'll do.
+I spent some time writing documentation for pixelfix, making everything clear and easy to read. I might have put a little bit too much time, but a cool thing came out of it! Pixelfix logo! It isn't anything special but it'll do.
 
 <p align="center">
     <img src="https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/pixelfix.webp" height="128" alt="pixelfix logo" style="vertical-align: middle;"/>

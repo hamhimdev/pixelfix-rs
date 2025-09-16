@@ -25,6 +25,7 @@ Pixelfix is now mirrored to GitHub. Only reason is so people can use it in their
 Increased limit of image processing from `16384x16384` to `65536x65536`. I don't know why you would want to go larger. If you're trying to pixelfix an image larger than `4096x4096`, pixelfix will now put a warning telling you "what the fuck are you doing? are you ok?"
 
 <video src="https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/changelog/0.1.1/meow.webm" width="600" controls loop muted></video>
+
 https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/changelog/0.1.1/meow.webm
 
 #### Improved Readme

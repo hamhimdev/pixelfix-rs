@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/pixelfix.webp" height="96" alt="pixelfix logo" style="vertical-align: middle;"/>
-  <span style="font-size:2em; vertical-align: middle;"><b>pixelfix</b></span>
+  <span style="font-size:3em; vertical-align: middle;"><b>pixelfix</b></span>
 </p>
 
 ---
@@ -14,6 +14,7 @@ Here's some statistics compared to Corecii's project:
 - Works as a **drop-in replacement**
 
 <video src="https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/showcase.webm" width="600" controls loop muted></video>
+
 https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/showcase.webm
 
 ## Features

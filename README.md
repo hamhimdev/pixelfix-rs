@@ -1,7 +1,7 @@
-<p align="center">
-  <img src="https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/pixelfix.webp" height="96" alt="pixelfix logo" style="vertical-align: middle;"/>
-  <span style="font-size:3em; vertical-align: middle;"><b>pixelfix</b></span>
-</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img src="https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/pixelfix.webp" height="96" alt="pixelfix logo" />
+  <span style="font-size:3em; font-weight: bold;">pixelfix</span>
+</div>
 
 ---
 

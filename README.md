@@ -1,6 +1,6 @@
-<div style="display: flex; justify-content: center; align-items: center;">
+<div style="display: flex; flex-direction: column; align-items: center;">
   <img src="https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/pixelfix.webp" height="96" alt="pixelfix logo" />
-  <span style="font-size:3em; font-weight: bold;">pixelfix</span>
+  <span style="display: block; font-size:3em; font-weight: bold; margin-top: 10px;">pixelfix</span>
 </div>
 
 ---

@@ -1,10 +1,14 @@
 [package]
 name = "pixelfix"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["hamhimdev <hamhimdev@proton.me>"]
 description = "Fix transparent pixels in PNG images by filling them with the nearest non-transparent pixel's color."
 license = "MIT"
+repository = "https://codeberg.org/hamhim/pixelfix"
+keywords = ["roblox", "pixelfix", "pixelfix-rs"]
+categories = ["command-line-utilities"]
+readme = "README.md"
 
 [[bin]]
 name = "pixelfix"
@@ -15,10 +19,15 @@ image = "0.25"
 kiddo = "5.2"
 rayon = "1.11"
 indicatif = "0.18"
-num_cpus = "1.16"
+num_cpus = "1.17"
 
 [target.'cfg(windows)'.dependencies]
-winapi = { version = "0.3", features = ["consoleapi", "processenv", "winbase", "winuser"] }
+winapi = { version = "0.3", features = [
+    "consoleapi",
+    "processenv",
+    "winbase",
+    "winuser",
+] }
 
 [profile.release]
 opt-level = 3

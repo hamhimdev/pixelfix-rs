@@ -38,7 +38,7 @@
           pname = "pixelfix";
           version = "0.1.0";
           src = ./.;
-          cargoHash = "sha256-Ttla/7+vB2BTlH5hiVgUdqHHxlBNu7lCP9XBlh1VM0M=";
+          cargoHash = "sha256-Ay8bW9Yu6oy/1oeAgnEAbeEifIQ316bOhpehXyHJphY=";
 
           inherit buildInputs nativeBuildInputs;
 

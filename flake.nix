@@ -36,7 +36,7 @@
       {
         packages.default = pkgs.rustPlatform.buildRustPackage {
           pname = "pixelfix";
-          version = "0.1.0";
+          version = "0.1.3";
           src = ./.;
           cargoHash = "sha256-qpCnhCFYG2wnVScpsW2eFu29WW5Awxjv/Pm6swEKUYY=";
 

@@ -116,7 +116,7 @@ A flake is provided that you can use to install the program on NixOS systems:
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     pixelfix.url = "github:hamhimdev/pixelfix-rs/main";
     # You can also use https://git.clickette.org/hamhim/pixelfix-rs, but GitHub will be faster and more reliable.
-    # If you prefer, you can replace this with Codeberg by using "git+https://codeberg.org/hamhim/pixelfix-rs/main", however if you don't have proper ipv6 you might have trouble using this.
+    # If you prefer, you can replace this with Codeberg by using "git+https://codeberg.org/hamhim/pixelfix-rs/", however if you don't have proper ipv6 you might have trouble using this.
   };
 
   outputs = { self, nixpkgs, pixelfix }: {

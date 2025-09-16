@@ -4,8 +4,6 @@
 
 <h1 align="center">Pixelfix</h1>
 
----
-
 **pixelfix-rs** is a Rust implementation of [Corecii’s Transparent Pixel Fix (pixelfix)](https://github.com/Corecii/Transparent-Pixel-Fix).
 
 Here's some statistics compared to Corecii's project:

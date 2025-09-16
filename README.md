@@ -1,7 +1,8 @@
-<div style="display: flex; flex-direction: column; align-items: center;">
-  <img src="https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/pixelfix.webp" height="96" alt="pixelfix logo" />
-  <span style="display: block; font-size:3em; font-weight: bold; margin-top: 10px;">pixelfix</span>
-</div>
+<p align="center">
+  <img src="https://codeberg.org/hamhim/pixelfix-rs/raw/branch/main/repository/pixelfix.webp" height="128" alt="pixelfix logo" style="vertical-align: middle;"/>
+</p>
+
+<h1 align="center">Pixelfix</h1>
 
 ---
 

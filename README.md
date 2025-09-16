@@ -37,7 +37,7 @@ Cargo is a package manager for Rust that installs packages and software ("crates
 After installation, you can run the following on any platform to install pixelfix globally:
 
 ```sh
-cargo install pixelfix-rs
+cargo install pixelfix
 ```
 
 This is really only recommended on MacOS because this also requires installing Rust alongside and build dependencies. Use other methods if you can.

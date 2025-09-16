@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.2 (16 September 2025)
+
+Wrong cargo command in readme. I don't think you can edit publishes on crates.io.
+
 ## v0.1.1 (16 September 2025)
 
 Most of the changes were just refactoring of the code. Here are key updates that isn't refactoring:

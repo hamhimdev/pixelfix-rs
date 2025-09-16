@@ -1,6 +1,6 @@
 [package]
 name = "pixelfix"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 authors = ["hamhimdev <hamhimdev@proton.me>"]
 description = "Fix transparent pixels in PNG images by filling them with the nearest non-transparent pixel's color."
